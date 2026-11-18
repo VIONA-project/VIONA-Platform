@@ -2,11 +2,11 @@
 
 **Open Industrial Orchestration**
 
-Software-defined automation depends on a common way to deploy and operate virtual PLCs (vPLCs) from different vendors at industrial scale. Koinodos is our proposal for that platform. We want to make that work practical for system integrators and industrial end users. Automation engineers should be able to manage a fleet of vPLCs without needing specialist knowledge of orchestration, containers, or virtual machines. They should have access to detailed operating data for each controller and the tools to diagnose faults when they arise. We will build on existing open-source orchestration and runtime components and focus Koinodos on the requirements of industrial vPLC fleets.
+Software-defined automation can only scale across industrial sites if engineers have a common way to deploy and operate virtual PLCs (vPLCs) from different vendors. Koinodos is an open-source project to build that platform for system integrators and industrial end users. The goal is to give automation engineers a way to manage an entire fleet without specialist knowledge of orchestration, containers, or virtual machines, with detailed operating data for each controller and the tools to diagnose faults.
 
-The orchestration layer governs how controllers are deployed, updated, and accessed across a plant. Plant owners need to be able to change suppliers and verify how these operations are secured. We are developing Koinodos in the open so that plant owners and integrators can review those mechanisms, and individual contributors and companies can help design and build the platform.
+The same platform will govern how controllers are deployed, updated, and accessed across a plant. Its design therefore affects how easily plant owners can change suppliers and how independently they can assess the security of those operations. We are developing Koinodos in the open so that plant owners and integrators can review the design and that individuals and companies can help shape it.
 
-Where applicable and feasible, we will follow principles from the Open Process Automation Forum (OPAF) and the Margo initiative as we design and build Koinodos.
+We will build on existing open-source orchestration and runtime components. In defining how those components work with controllers from different vendors, we will follow principles from the Open Process Automation Forum (OPAF) and the Margo initiative where they are applicable and feasible to implement.
 
 ## About the name
 
