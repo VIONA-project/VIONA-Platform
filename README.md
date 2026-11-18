@@ -2,7 +2,7 @@
 
 **Open Industrial Orchestration**
 
-Software-defined automation depends on a common way to deploy and operate virtual PLCs (vPLCs) from different vendors at industrial scale. Koinodos is our proposal for that platform. We want to make that work practical for system integrators and industrial end users. An automation engineer should be able to deploy a vPLC, see what is running, and find out why a deployment failed. We plan to build on existing software and develop the platform with the automation community.
+Software-defined automation depends on a common way to deploy and operate virtual PLCs (vPLCs) from different vendors at industrial scale. Koinodos is our proposal for that platform. We want to make that work practical for system integrators and industrial end users. Automation engineers should be able to manage a fleet of vPLCs without needing specialist knowledge of orchestration, containers, or virtual machines. They should have access to detailed operating data for each controller and the tools to diagnose faults when they arise. We plan to build on existing software and develop the platform with the automation community.
 
 An orchestrator becomes part of the infrastructure a plant depends on. Its design affects whether users can change vendors and how they assess and manage cybersecurity risks. We believe infrastructure this important should be developed as open source, with both individuals and companies able to review the design and contribute.
 
