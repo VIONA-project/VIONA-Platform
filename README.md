@@ -2,9 +2,9 @@
 
 **Open Industrial Orchestration**
 
-Software-defined automation depends on a common way to deploy and operate virtual PLCs (vPLCs) from different vendors at industrial scale. Koinodos is our proposal for that platform. We want to make that work practical for system integrators and industrial end users. Automation engineers should be able to manage a fleet of vPLCs without needing specialist knowledge of orchestration, containers, or virtual machines. They should have access to detailed operating data for each controller and the tools to diagnose faults when they arise. We plan to build on existing software and develop the platform with the automation community.
+Software-defined automation depends on a common way to deploy and operate virtual PLCs (vPLCs) from different vendors at industrial scale. Koinodos is our proposal for that platform. We want to make that work practical for system integrators and industrial end users. Automation engineers should be able to manage a fleet of vPLCs without needing specialist knowledge of orchestration, containers, or virtual machines. They should have access to detailed operating data for each controller and the tools to diagnose faults when they arise. We will build on existing open-source orchestration and runtime components and focus Koinodos on the requirements of industrial vPLC fleets.
 
-An orchestrator becomes part of the infrastructure a plant depends on. Its design affects whether users can change vendors and how they assess and manage cybersecurity risks. We believe infrastructure this important should be developed as open source, with both individuals and companies able to review the design and contribute.
+The orchestration layer governs how controllers are deployed, updated, and accessed across a plant. Plant owners need to be able to change suppliers and verify how these operations are secured. We are developing Koinodos in the open so that plant owners and integrators can review those mechanisms, and individual contributors and companies can help design and build the platform.
 
 ## Project status
 
