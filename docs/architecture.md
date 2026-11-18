@@ -91,7 +91,11 @@ An adapter can integrate additional controllers through an official API, SDK, CL
 
 ## Trust boundaries
 
-The node agent uses an authenticated, encrypted connection to the control plane. Enrollment establishes a unique node identity. Access to infrastructure management and PLC operations is scoped separately. The control plane records the actor, target, artifact identity, and outcome of state-changing requests.
+Koinodos will use signed JSON Web Tokens (JWTs) as the primary authentication mechanism for its management API. Enrollment gives each node a unique identity. When a node agent connects, the control plane will validate the token’s signature, issuer, audience, and expiry before accepting requests under that identity.
+
+TLS 1.3 will encrypt network connections to the management API, including connections from node agents and the operator interface. Deployments will support server certificates issued by the plant operator’s enterprise certificate authority (CA). Clients will be able to use the operator’s CA trust chain to verify the control plane’s certificate.
+
+Access to infrastructure management and PLC operations is scoped separately. The control plane records the actor, target, artifact identity, and outcome of state-changing requests.
 
 The executor verifies artifact digests and uses scoped access to the runtime backend. Docker and Firecracker management interfaces stay on the trusted side of the node boundary. Vendor credentials are scoped to their target and capabilities. Secrets stay out of workload manifests and logs.
 
