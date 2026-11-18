@@ -11,9 +11,24 @@ Koinodos is designed to operate virtual PLCs and supporting services across indu
 
 ## Components and responsibilities
 
-![Operator requests pass through the control plane. The scheduler assigns a workload instance to a node. A vendor connector separately deploys an application package to the controller.](assets/architecture.svg)
+![Koinodos scheduler, execution agent, and vendor adapter responsibilities](assets/architecture.svg)
 
-[Open the full-size diagram](assets/architecture.svg). The boxes inside the inventory and operation store are records. The other boxes identify software components or the systems they manage. Edge labels describe the requests and results exchanged between them. This is the proposed design. The prototype will establish the interfaces and deployment boundaries.
+| Component | Responsibility |
+| --- | --- |
+| **Control plane** | Stores desired workload state, inventory, and the operation history. Authorizes changes, selects the placement path, and presents observed state with its timestamp and source. |
+| **Cluster scheduler** | Assigns workload tasks to suitable nodes based on capacity and constraints. Direct reuse of SwarmKit is the leading candidate. The Docker prototype will test the scheduling path for container workloads. |
+| **Node agent and executors** | Report capabilities, confirm that assigned resources can be reserved, and manage execution through the selected backend. Reconcile local processes, containers, or VMs after restart. |
+| **Vendor adapters** | Translate controller operations to the vendor's supported interfaces. Report available actions and observed application state. An adapter can run on the node or on a reachable gateway. |
+| **Artifact store** | Holds versioned runtime images and native application packages by immutable identity and digest. Existing registries or storage services can provide the underlying storage. |
+| **Operator interface** | Exposes inventory, deployment intent, progress, diagnostics, and audit history. It uses the control-plane API and displays actions supported by the target. |
+
+The orchestration agent is outside the real-time path. The control plane issues workload and deployment requests, while the controller retains local access to its drivers, I/O, and application state.
+
+## Detailed architecture
+
+![Operator requests pass through the control plane. The scheduler assigns a workload instance to a node. A vendor connector separately deploys an application package to the controller.](assets/architecture-detailed.svg)
+
+[Open the full-size diagram](assets/architecture-detailed.svg). The boxes inside the inventory and operation store are records. The other boxes identify software components or the systems they manage. Edge labels describe the requests and results exchanged between them. This is the proposed design. The prototype will establish the interfaces and deployment boundaries.
 
 | Component | Responsibility and proposed implementation |
 | --- | --- |
