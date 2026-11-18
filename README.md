@@ -14,7 +14,9 @@ The name Koinodos combines *koinon* (κοινόν), a Greek term for a league of
 
 ## Project status
 
-Koinodos is at the design stage. We are publishing our initial vision and roadmap and inviting automation engineers, integrators, end users, and vendors to review them. If you have a requirement from a real installation or see a gap in the design, [open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues). We also welcome contributors who want to help build the platform as the design takes shape.
+Koinodos is at the design stage. We are publishing our initial vision and roadmap to give contributors a starting point.
+
+We invite automation engineers, system integrators, industrial end users, vPLC vendors, and specialists in virtualization, orchestration, and cybersecurity to take part in the project. Individuals and companies can contribute by sharing requirements from industrial sites, helping shape the architecture, building the platform and its integrations, or testing early releases. [Open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues) to share a use case, propose a change, or tell us how you’d like to contribute.
 
 | Read | What it covers |
 | --- | --- |
