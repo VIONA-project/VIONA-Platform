@@ -13,7 +13,7 @@ Where applicable and feasible, we will follow principles from the Open Process A
 
 ## About the name
 
-The name Koinodos combines *koinon* (κοινόν), a Greek term for a league of city-states, with *proodos* (πρόοδος), meaning progress. It captures the idea of moving industrial automation forward together.
+The name Koinodos combines *koinon* (κοινόν), a Greek term for a league of city-states, with *proodos* (πρόοδος), meaning progress. It reflects our aim to bring vPLC vendors together around an open platform and move industrial automation forward.
 
 | Page | Start here if you want to understand |
 | --- | --- |
