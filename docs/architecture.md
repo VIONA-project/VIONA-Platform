@@ -55,17 +55,19 @@ Consider a packaging line with two controllers running the same runtime version.
 
 ## Communication paths
 
-These are candidate interfaces for implementation. The arrows show logical exchanges, including results that travel back along the same path.
+The table shows how the components would work together when an engineer starts a vPLC or loads a control application.
 
-| Path in the diagram | Proposed interface and exchange |
+| Components | What they exchange |
 | --- | --- |
-| **Operator interface ↔ platform API** | HTTPS with JSON for fleet queries and authorized changes. A change returns an operation ID that the UI can use to retrieve progress, results, and observations. |
-| **Coordinator ↔ store and scheduler** | Persist the desired state and operation before dispatch. An internal scheduler integration maps the workload instance to a task with placement constraints and records the task ID. The Docker prototype will test the SwarmKit integration boundary. |
-| **Scheduler ↔ node agent** | With SwarmKit, use its manager–worker assignment and task-status path. The worker passes assignments to the executor. The agent reports admission failures, backend state, and resource availability. |
-| **Node agent ↔ platform API** | Use an authenticated, encrypted node channel for inventory and timestamped observations. Reports carry stable node and instance IDs so the coordinator can correlate them after a reconnect. |
-| **Agent ↔ executor ↔ backend** | A local executor interface covers inspection, start, stop, and reconciliation. The Docker executor uses the Docker Engine API. The Kata evaluation will test a Kata-compatible runtime path. The direct Firecracker executor would configure and control the microVM through its local API. |
-| **Coordinator ↔ vendor connector ↔ controller** | The proposed connector interface carries the operation ID, stable target ID, requested action, and package reference. An authenticated channel returns capabilities, progress, diagnostics, and readback. Between connector and controller, the vendor selects its supported API, SDK, CLI, or gateway protocol. |
-| **Artifact store → executor or connector** | Consumers pull OCI images through the registry interface or fetch files through authenticated storage access and verify their digests. An assignment or deployment request carries the artifact reference. |
+| **Operator interface and platform API** | The interface uses HTTPS and JSON to request fleet status or submit a change. For a change, the API checks permissions and returns an operation ID. The interface uses that ID to show progress and the result. |
+| **Coordinator and inventory store** | Before sending a command, the coordinator saves what the engineer requested and opens an operation record in the store. |
+| **Coordinator and scheduler** | To start a vPLC, the coordinator tells the scheduler which instance to run and what resources it needs. It records the scheduler’s task ID so it can track the assignment. The Docker prototype will test this integration with SwarmKit. |
+| **Scheduler and node agent** | The scheduler chooses a node and sends it the task. The agent checks local resources and reports whether the workload started or why it could not start. With SwarmKit, assignments and status updates use its manager–worker connection. |
+| **Node agent and platform API** | The agent reports available resources and what is running on the node over an authenticated, encrypted connection. Each report includes the observation time and stable IDs so the platform can identify the same node and instances after a reconnect. |
+| **Node agent and backend executor** | The agent asks the executor to start, stop, or inspect a workload. After a restart, the executor checks what is already running. For Docker, it uses the Docker Engine API. Later trials will evaluate a Kata-compatible runtime and the local Firecracker API. |
+| **Coordinator and vendor connector** | The coordinator sends the connector an operation ID, the target controller, and the action to perform. For an application deployment, it also identifies the package to load. The connector reports supported actions, progress, diagnostics, and results over an authenticated connection. |
+| **Vendor connector and controller** | The connector uses the vendor’s API, SDK, command-line tool, or gateway to load the application. It then asks the controller which revision is active and reports what it can verify. |
+| **Executor or connector and artifact store** | The executor downloads the runtime image. The connector downloads the control application. Each uses the reference in its request to fetch the file or OCI image and verifies its digest before use. File storage requires authenticated access. |
 
 ## Deployment flow
 
