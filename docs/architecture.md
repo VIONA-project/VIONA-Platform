@@ -9,9 +9,9 @@ title: Architecture
 
 Koinodos is designed to operate virtual PLCs and supporting services across industrial PCs. It coordinates placement, installation, application deployment, and diagnostics. The controller executes the control loop locally and owns its behavior when communications fail. A loss of the Koinodos control plane or its connection to a node must not by itself stop running controller logic.
 
-## Components and responsibilities
+## Architecture overview
 
-![Koinodos scheduler, execution agent, and vendor adapter responsibilities](assets/architecture.svg)
+![Koinodos scheduler, execution agent, and vendor adapter responsibilities](assets/architecture-overview.svg)
 
 | Component | Responsibility |
 | --- | --- |
