@@ -7,23 +7,14 @@ title: Roadmap
 
 # Roadmap
 
-Koinodos starts with a small set of architecture documents. Later milestones describe the planned sequence of validation and implementation.
-
 | Stage | Outcome |
 | --- | --- |
-| **1. Foundation and scheduler experiment** | Document system boundaries and the execution model. Demonstrate a container and Firecracker microVM assigned by the same SwarmKit scheduler and record the decision. |
-| **2. Execution and agent contract** | Stabilize workload identity, capabilities, admission, and recovery behavior. Qualify a Kata execution path. |
-| **3. First AnyPLC workflow** | Enroll a runtime, deploy a native application package, and verify the active revision and runtime state on a test target. |
-| **4. Multi-vendor operation** | Connect a second PLC technology through a supported interface and verify that the core workload and operation contracts accommodate it. |
-| **5. Industrial pilot** | Verify site operation, upgrades, backup and restore, failure handling, and the applicable real-time and physical I/O profiles. |
+| **1. Form the team and finalize the architecture** | Bring together the initial team and agree on the architecture, the components to reuse, and the scope of the Docker MVP. |
+| **2. Build the Docker prototype** | Use Docker containers to demonstrate that Koinodos can place, start, stop, and observe workloads on industrial edge nodes. Use the results to verify the design choices that affect the MVP. |
+| **3. Build and test the MVP** | Put the Docker-based workflow together and verify it on a testbed with AnyPLC. Test deployment, fleet monitoring, controller diagnostics, and recovery. A successful MVP launch opens the next two workstreams. |
+| **4. Evaluate lightweight VMs and integrate vendor vPLCs** | In parallel, test whether Koinodos can run vPLCs through Kata Containers and Firecracker, and work with vPLC vendors as they develop and test their own connectors against the platform's integration interface. |
+| **5. Run industrial pilot projects** | Take the platform to pilot installations after the VM evaluation and vendor integration work. Validate deployment, upgrades, and recovery under site conditions, along with the real-time and physical I/O requirements that apply to each installation. |
 
-## Scheduler decision criteria
+## Software development lifecycle
 
-The proposed lab has one SwarmKit manager and two workers. At least one worker can run Firecracker. Start a regular OCI workload and a microVM workload using the same scheduler, then examine:
-
-1. **Placement.** The microVM is assigned only to an eligible worker. Requests that cannot be placed explain what requirement is missing.
-2. **Lifecycle.** Task identity can be traced to the assigned worker and backend instance. Stop releases reserved resources.
-3. **Agent recovery.** Restarting the agent reconciles an existing workload without starting a duplicate.
-4. **Upstream integration.** The experiment records the pinned upstream revision, integration points, and any required modifications. This evidence informs the choice between SwarmKit directly and Docker Swarm with explicit Firecracker placement.
-
-The lab validates scheduling and execution boundaries. Product readiness, real-time behavior, and production I/O transfer are separate milestones.
+We will introduce software development lifecycle (SDLC) practices throughout the project. During architecture work, we will review design decisions and record how they are made. As implementation begins, we will add code review, continuous integration, automated tests, and dependency and security checks. We will formalize release and change management and vulnerability handling as the project moves toward pilots.

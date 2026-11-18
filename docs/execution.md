@@ -19,7 +19,7 @@ The container and Kata variants may share an OCI image. Direct Firecracker needs
 
 ## Scheduling and backend integration
 
-The leading design uses [SwarmKit](https://github.com/moby/swarmkit) directly as the common cluster scheduler for heterogeneous tasks. A node-side executor maps an assigned workload to Docker, a Kata-capable runtime, or Firecracker. The prototype will check which upstream interfaces are sufficient and how much project-owned code the integration needs.
+The leading design uses [SwarmKit](https://github.com/moby/swarmkit) directly as the common cluster scheduler for heterogeneous tasks. A node-side executor maps an assigned workload to Docker, a Kata-capable runtime, or Firecracker. The Docker prototype will test the container path. After the Docker-based MVP is running and tested, the Kata and Firecracker evaluation will check which upstream interfaces can be reused and what integration code Koinodos needs.
 
 The alternative is Docker Swarm for supported container workloads and a Koinodos agent managing Firecracker on explicitly assigned nodes. The architecture decision will compare placement ownership, recovery behavior, and maintenance cost. Integration with Kata remains subject to runtime and node qualification on either path.
 

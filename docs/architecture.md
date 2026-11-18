@@ -16,7 +16,7 @@ Koinodos is designed to operate virtual PLCs and supporting services across indu
 | Component | Responsibility |
 | --- | --- |
 | **Control plane** | Stores desired workload state, inventory, and the operation history. Authorizes changes, selects the placement path, and presents observed state with its timestamp and source. |
-| **Cluster scheduler** | Assigns workload tasks to suitable nodes based on capacity and constraints. Direct reuse of SwarmKit is the leading candidate and will be tested in a prototype. |
+| **Cluster scheduler** | Assigns workload tasks to suitable nodes based on capacity and constraints. Direct reuse of SwarmKit is the leading candidate. The Docker prototype will test the scheduling path for container workloads. |
 | **Node agent and executors** | Report capabilities, confirm that assigned resources can be reserved, and manage execution through the selected backend. Reconcile local processes, containers, or VMs after restart. |
 | **Vendor adapters** | Translate controller operations to the vendor's supported interfaces. Report available actions and observed application state. An adapter can run on the node or on a reachable gateway. |
 | **Artifact store** | Holds versioned runtime images and native application packages by immutable identity and digest. Existing registries or storage services can provide the underlying storage. |
@@ -60,4 +60,4 @@ The executor verifies artifact digests and uses scoped access to the runtime bac
 
 ## Industry references
 
-[Margo](https://docs.margo.org/) informs edge workload and device lifecycle terminology. [OPAF and O-PAS](https://www.opengroup.org/forum/open-process-automation-forum) inform modular interfaces and interoperability boundaries. Koinodos will document mappings to specific published requirements as implementations mature. The architecture currently describes design alignment.
+Where applicable and feasible, Koinodos will follow principles from [OPAF](https://www.opengroup.org/forum/open-process-automation-forum) and [Margo](https://docs.margo.org/). We will draw on OPAF and O-PAS for modular interfaces and interoperability, and on Margo for edge workload and device lifecycle management. As the implementation matures, we will document where it aligns with specific published requirements.

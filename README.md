@@ -6,6 +6,12 @@ Software-defined automation depends on a common way to deploy and operate virtua
 
 The orchestration layer governs how controllers are deployed, updated, and accessed across a plant. Plant owners need to be able to change suppliers and verify how these operations are secured. We are developing Koinodos in the open so that plant owners and integrators can review those mechanisms, and individual contributors and companies can help design and build the platform.
 
+Where applicable and feasible, we will follow principles from the Open Process Automation Forum (OPAF) and the Margo initiative as we design and build Koinodos.
+
+## About the name
+
+The name Koinodos combines *koinon* (κοινόν), a Greek term for a league of city-states, with *proodos* (πρόοδος), meaning progress. It captures the idea of moving industrial automation forward together.
+
 ## Project status
 
 Koinodos is at the design stage. We are publishing our initial vision and roadmap and inviting automation engineers, integrators, end users, and vendors to review them. If you have a requirement from a real installation or see a gap in the design, [open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues). We also welcome contributors who want to help build the platform as the design takes shape. AnyPLC is the first planned integration.
