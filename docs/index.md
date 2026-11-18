@@ -7,7 +7,7 @@ title: Koinodos documentation
 
 Koinodos is an open-source project for system integrators and industrial end users. We want to make it practical for automation engineers to deploy and operate virtual PLCs from different vendors at industrial scale. That capability is a prerequisite for software-defined automation.
 
-The choice of orchestrator affects vendor independence and cybersecurity. We want the people and companies who will rely on Koinodos to help shape it. The pages below describe our initial vision and roadmap. [Open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues) to share a use case, comment on the design, or get involved. AnyPLC is the first planned integration.
+The choice of orchestrator affects vendor independence and cybersecurity. We want the people and companies who will rely on Koinodos to help shape it. The pages below describe our initial vision and roadmap. [Open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues) to share a use case, comment on the design, or get involved.
 
 Where applicable and feasible, we will follow principles from the Open Process Automation Forum (OPAF) and the Margo initiative as we design and build Koinodos.
 

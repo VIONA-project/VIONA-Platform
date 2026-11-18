@@ -40,7 +40,7 @@ The UI reports three observations independently: the execution backend is runnin
 4. The adapter invokes the vendor's deployment interface. The control plane tracks the operation by a stable ID through any retry or reconnect.
 5. The adapter reads back the active application revision and operating state when the vendor exposes them. Observed results determine whether the operation succeeded.
 
-**AnyPLC example.** A test cell can run an AnyPLC release in a Docker container. An isolated test cell can request the same compatible release under Kata. The AnyPLC adapter still deploys the native package produced by AnyPLC engineering tools. It exposes narrower operations such as Resource or Application deploy only where the runtime contract supports them.
+**Example.** A test cell can run a vendor’s vPLC in a Docker container. An isolated test cell can run the same release under Kata if the release supports it. In both cases, the vendor connector deploys the native package produced by the vendor’s engineering tools.
 
 An adapter can integrate additional controllers through an official API, SDK, CLI, or gateway. An already installed PLC can be enrolled as an external target, with lifecycle ownership staying with its existing host or vendor tooling. Vendor-specific diagnostics remain available alongside common identity, reachability, and status fields.
 

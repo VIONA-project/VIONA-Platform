@@ -14,7 +14,7 @@ The name Koinodos combines *koinon* (κοινόν), a Greek term for a league of
 
 ## Project status
 
-Koinodos is at the design stage. We are publishing our initial vision and roadmap and inviting automation engineers, integrators, end users, and vendors to review them. If you have a requirement from a real installation or see a gap in the design, [open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues). We also welcome contributors who want to help build the platform as the design takes shape. AnyPLC is the first planned integration.
+Koinodos is at the design stage. We are publishing our initial vision and roadmap and inviting automation engineers, integrators, end users, and vendors to review them. If you have a requirement from a real installation or see a gap in the design, [open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues). We also welcome contributors who want to help build the platform as the design takes shape.
 
 | Read | What it covers |
 | --- | --- |
