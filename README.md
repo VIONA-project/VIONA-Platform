@@ -2,13 +2,13 @@
 
 **Open Industrial Orchestration**
 
-Koinodos is an open-source industrial orchestration platform designed to deploy, manage, and monitor virtual PLCs from multiple vendors in Docker containers and lightweight virtual machines. It is intended for integrators, machine builders, and operations teams that manage workloads across industrial edge nodes.
+Software-defined automation depends on a common way to deploy and operate virtual PLCs (vPLCs) from different vendors at industrial scale. Koinodos is our proposal for that platform. We want to make that work practical for system integrators and industrial end users. An automation engineer should be able to deploy a vPLC, see what is running, and find out why a deployment failed. We plan to build on existing software and develop the platform with the automation community.
 
-Vendor adapters connect controllers to a common management interface while preserving native engineering tools and application formats. Control logic runs locally on each PLC.
+An orchestrator becomes part of the infrastructure a plant depends on. Its design affects whether users can change vendors and how they assess and manage cybersecurity risks. We believe infrastructure this important should be developed as open source, with both individuals and companies able to review the design and contribute.
 
 ## Project status
 
-Koinodos is in architecture design. The documentation describes intended behavior and the experiments required to validate it. The first integration target is AnyPLC.
+Koinodos is at the design stage. We are publishing our initial vision and roadmap and inviting automation engineers, integrators, end users, and vendors to review them. If you have a requirement from a real installation or see a gap in the design, [open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues). We also welcome contributors who want to help build the platform as the design takes shape. AnyPLC is the first planned integration.
 
 | Read | What it covers |
 | --- | --- |
