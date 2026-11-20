@@ -1,17 +1,10 @@
----
-layout: default
-title: Architecture
----
-
-[Documentation home](index.md) · [Workloads and execution](execution.md) · [Roadmap](roadmap.md)
-
 # Architecture
 
-Koinodos is designed to operate virtual PLCs and supporting services across industrial PCs. It coordinates placement, installation, application deployment, and diagnostics. The controller executes the control loop locally and owns its behavior when communications fail. A loss of the Koinodos control plane or its connection to a node must not by itself stop running controller logic.
+VIONA is designed to operate virtual PLCs and supporting services across industrial PCs. It coordinates placement, installation, application deployment, and diagnostics. The controller executes the control loop locally and owns its behavior when communications fail. A loss of the VIONA control plane or its connection to a node must not by itself stop running controller logic.
 
 ## Architecture overview
 
-![Koinodos scheduler, execution agent, and vendor adapter responsibilities](assets/architecture-overview.svg)
+![VIONA scheduler, execution agent, and vendor adapter responsibilities](assets/architecture-overview.svg)
 
 | Component | Responsibility |
 | --- | --- |
@@ -91,7 +84,7 @@ An adapter can integrate additional controllers through an official API, SDK, CL
 
 ## Trust boundaries
 
-Koinodos will use signed JSON Web Tokens (JWTs) as the primary authentication mechanism for its management API. Enrollment gives each node a unique identity. When a node agent connects, the control plane will validate the token’s signature, issuer, audience, and expiry before accepting requests under that identity.
+VIONA will use signed JSON Web Tokens (JWTs) as the primary authentication mechanism for its management API. Enrollment gives each node a unique identity. When a node agent connects, the control plane will validate the token’s signature, issuer, audience, and expiry before accepting requests under that identity.
 
 TLS 1.3 will encrypt network connections to the management API, including connections from node agents and the operator interface. Deployments will support server certificates issued by the plant operator’s enterprise certificate authority (CA). Clients will be able to use the operator’s CA trust chain to verify the control plane’s certificate.
 
@@ -101,4 +94,4 @@ The executor verifies artifact digests and uses scoped access to the runtime bac
 
 ## Industry references
 
-Where applicable and feasible, Koinodos will follow principles from [OPAF](https://www.opengroup.org/forum/open-process-automation-forum) and [Margo](https://docs.margo.org/). We will draw on OPAF and O-PAS for modular interfaces and interoperability, and on Margo for edge workload and device lifecycle management. As the implementation matures, we will document where it aligns with specific published requirements.
+Where applicable and feasible, VIONA will follow principles from [OPAF](https://www.opengroup.org/forum/open-process-automation-forum) and [Margo](https://docs.margo.org/). We will draw on OPAF and O-PAS for modular interfaces and interoperability, and on Margo for edge workload and device lifecycle management. As the implementation matures, we will document where it aligns with specific published requirements.

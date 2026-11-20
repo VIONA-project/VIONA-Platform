@@ -1,13 +1,6 @@
----
-layout: default
-title: Workloads and execution
----
-
-[Documentation home](index.md) · [Architecture](architecture.md) · [Roadmap](roadmap.md)
-
 # Workloads and execution
 
-Koinodos treats a virtual PLC as a workload with an explicit execution backend. The same runtime release can be packaged for different backends. Supported combinations are determined by the release, the node, and the target's requirements.
+VIONA treats a virtual PLC as a workload with an explicit execution backend. The same runtime release can be packaged for different backends. Supported combinations are determined by the release, the node, and the target's requirements.
 
 | Planned backend | Launch artifact | Execution environment |
 | --- | --- | --- |
@@ -19,9 +12,9 @@ The container and Kata variants may share an OCI image. Direct Firecracker needs
 
 ## Scheduling and backend integration
 
-The leading design uses [SwarmKit](https://github.com/moby/swarmkit) directly as the common cluster scheduler for heterogeneous tasks. A node-side executor maps an assigned workload to Docker, a Kata-capable runtime, or Firecracker. The Docker prototype will test the container path. After the Docker-based MVP is running and tested, the Kata and Firecracker evaluation will check which upstream interfaces can be reused and what integration code Koinodos needs.
+The leading design uses [SwarmKit](https://github.com/moby/swarmkit) directly as the common cluster scheduler for heterogeneous tasks. A node-side executor maps an assigned workload to Docker, a Kata-capable runtime, or Firecracker. The Docker prototype will test the container path. After the Docker-based MVP is running and tested, the Kata and Firecracker evaluation will check which upstream interfaces can be reused and what integration code VIONA needs.
 
-The alternative is Docker Swarm for supported container workloads and a Koinodos agent managing Firecracker on explicitly assigned nodes. The architecture decision will compare placement ownership, recovery behavior, and maintenance cost. Integration with Kata remains subject to runtime and node qualification on either path.
+The alternative is Docker Swarm for supported container workloads and a VIONA agent managing Firecracker on explicitly assigned nodes. The architecture decision will compare placement ownership, recovery behavior, and maintenance cost. Integration with Kata remains subject to runtime and node qualification on either path.
 
 ## Placement and local admission
 

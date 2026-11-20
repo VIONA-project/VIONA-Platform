@@ -32,3 +32,8 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Documentation build and Python environment
+docs/_build/
+.venv/
+__pycache__/

@@ -20,6 +20,7 @@ We invite automation engineers, system integrators, industrial end users, vPLC v
 | [Architecture](docs/architecture.md) | Components, deployment and recovery flows, and trust boundaries |
 | [Workloads and execution](docs/execution.md) | Docker, Kata Containers, Firecracker, and placement |
 | [Roadmap](docs/roadmap.md) | Design, prototype, and pilot milestones |
+| [Contributing](docs/contributing.md) | Share use cases, review the design, and build the documentation locally |
 
 ## License
 

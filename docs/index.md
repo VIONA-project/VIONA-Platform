@@ -1,26 +1,52 @@
----
-layout: default
-title: Koinodos documentation
----
+# VIONA Documentation
 
-# Koinodos documentation
+```{raw} html
+<p class="viona-intro">Open Industrial Orchestration — a common way to deploy and operate virtual PLCs across industrial sites.</p>
+```
 
-Koinodos is an open-source project for system integrators and industrial end users. We want to make it practical for automation engineers to deploy and operate virtual PLCs from different vendors at industrial scale. That capability is a prerequisite for software-defined automation.
+Welcome to the VIONA documentation. VIONA stands for **Virtualized Industrial Orchestration & Node Automation**. We are building an open platform for automation engineers, system integrators, and industrial end users working with controllers from different vendors.
 
-The choice of orchestrator affects vendor independence and cybersecurity. The pages below describe our initial vision and roadmap.
+```{note}
+**Design-stage documentation.** These pages describe the proposed architecture and roadmap. The platform is not yet released, and interfaces will evolve as the prototype is built and tested.
+```
 
-We invite automation engineers, system integrators, industrial end users, vPLC vendors, and specialists in virtualization, orchestration, and cybersecurity to take part in the project. Individuals and companies can contribute by sharing requirements from industrial sites, helping shape the architecture, building the platform and its integrations, or testing early releases. [Open an issue](https://github.com/Koinodos-project/Koinodos-Platform/issues) to share a use case, propose a change, or tell us how you’d like to contribute.
+## Explore the documentation
 
-Where applicable and feasible, we will follow principles from the Open Process Automation Forum (OPAF) and the Margo initiative as we design and build Koinodos.
+```{raw} html
+<div class="viona-topics">
+  <article class="viona-topic">
+    <h3><a href="overview.html">Project overview</a></h3>
+    <p>Understand the goals, design principles, and current status of VIONA.</p>
+  </article>
+  <article class="viona-topic">
+    <h3><a href="architecture.html">Architecture</a></h3>
+    <p>Explore components, deployment flows, communication paths, and trust boundaries.</p>
+  </article>
+  <article class="viona-topic">
+    <h3><a href="execution.html">Workloads and execution</a></h3>
+    <p>Learn how scheduling and node admission fit with Docker, Kata Containers, and Firecracker.</p>
+  </article>
+  <article class="viona-topic">
+    <h3><a href="roadmap.html">Roadmap</a></h3>
+    <p>Follow the path from architecture and a Docker prototype to an MVP and industrial pilots.</p>
+  </article>
+</div>
+```
 
-## About the name
+## Get involved
 
-The name Koinodos combines *koinon* (κοινόν), a Greek term for a league of city-states, with *proodos* (πρόοδος), meaning progress. It reflects our aim to bring vPLC vendors together around an open platform and move industrial automation forward.
+We welcome individuals and companies who want to share requirements, review the design, build integrations, or test future prototypes. Read [Contributing](contributing.md) or [open an issue](https://github.com/VIONA-project/VIONA-Platform/issues) to join the work.
 
-| Page | Start here if you want to understand |
-| --- | --- |
-| [Architecture](architecture.md) | What runs on the control plane and on each industrial PC |
-| [Workloads and execution](execution.md) | How Docker, Kata Containers, and Firecracker fit together |
-| [Roadmap](roadmap.md) | How the project will move from architecture and a Docker prototype to an MVP and industrial pilots |
+Source and documentation are maintained in the [VIONA-Platform repository](https://github.com/VIONA-project/VIONA-Platform) under the [Apache License, Version 2.0](https://github.com/VIONA-project/VIONA-Platform/blob/main/LICENSE).
 
-[Project repository](https://github.com/Koinodos-project/Koinodos-Platform) · [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+```{toctree}
+:hidden:
+:maxdepth: 2
+:caption: Documentation
+
+overview
+architecture
+execution
+roadmap
+contributing
+```
