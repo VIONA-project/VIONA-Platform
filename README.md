@@ -16,11 +16,11 @@ We invite automation engineers, system integrators, industrial end users, vPLC v
 
 | Read | What it covers |
 | --- | --- |
-| [Documentation home](docs/index.md) | Start here |
-| [Architecture](docs/architecture.md) | Components, deployment and recovery flows, and trust boundaries |
-| [Workloads and execution](docs/execution.md) | Docker, Kata Containers, Firecracker, and placement |
-| [Roadmap](docs/roadmap.md) | Design, prototype, and pilot milestones |
-| [Contributing](docs/contributing.md) | Share use cases, review the design, and build the documentation locally |
+| [Documentation home](https://viona-project.github.io/VIONA-Platform/) | Start here |
+| [Architecture](https://viona-project.github.io/VIONA-Platform/architecture.html) | Components, deployment and recovery flows, and trust boundaries |
+| [Workloads and execution](https://viona-project.github.io/VIONA-Platform/execution.html) | Docker, Kata Containers, Firecracker, and placement |
+| [Roadmap](https://viona-project.github.io/VIONA-Platform/roadmap.html) | Design, prototype, and pilot milestones |
+| [Contributing](https://viona-project.github.io/VIONA-Platform/contributing.html) | Share use cases, review the design, and build the documentation locally |
 
 ## License
 
