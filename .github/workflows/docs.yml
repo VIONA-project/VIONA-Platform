@@ -23,6 +23,7 @@ jobs:
       pages: read
     outputs:
       pages_ready: ${{ steps.pages.outputs.ready }}
+      artifact_name: github-pages-${{ github.run_attempt }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -37,6 +38,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.run_attempt }}
           path: docs/_build/html
       - name: Check Pages publishing source
         id: pages
@@ -49,7 +51,7 @@ jobs:
             echo "ready=true" >> "$GITHUB_OUTPUT"
           else
             echo "ready=false" >> "$GITHUB_OUTPUT"
-            echo "::warning::To publish, select GitHub Actions in Settings > Pages > Source, then run this workflow again. The built site is available in the github-pages artifact."
+            echo "::warning::To publish, select GitHub Actions in Settings > Pages > Source, then run this workflow again. The built site is available in the Pages artifact."
           fi
 
   deploy:
@@ -68,3 +70,5 @@ jobs:
       - name: Deploy documentation
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ needs.build.outputs.artifact_name }}
