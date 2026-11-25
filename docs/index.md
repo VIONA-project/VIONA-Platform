@@ -23,6 +23,10 @@ Welcome to the VIONA documentation. VIONA stands for **Virtualized Industrial Or
     <p>Explore components, deployment flows, communication paths, and trust boundaries.</p>
   </article>
   <article class="viona-topic">
+    <h3><a href="infrastructure-lifecycle.html">Infrastructure lifecycle management</a></h3>
+    <p>Connect artifact storage, monitoring, logging and software maintenance to the fleet view.</p>
+  </article>
+  <article class="viona-topic">
     <h3><a href="execution.html">Workloads and execution</a></h3>
     <p>Learn how scheduling and node admission fit with Docker, Kata Containers, and Firecracker.</p>
   </article>
@@ -46,6 +50,7 @@ Source and documentation are maintained in the [VIONA-Platform repository](https
 
 overview
 architecture
+infrastructure-lifecycle
 execution
 roadmap
 contributing

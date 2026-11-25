@@ -18,6 +18,7 @@ We invite automation engineers, system integrators, industrial end users, vPLC v
 | --- | --- |
 | [Documentation home](https://viona-project.github.io/VIONA-Platform/) | Start here |
 | [Architecture](https://viona-project.github.io/VIONA-Platform/architecture.html) | Components, deployment and recovery flows, and trust boundaries |
+| [Infrastructure lifecycle management](https://viona-project.github.io/VIONA-Platform/infrastructure-lifecycle.html) | Artifact storage, monitoring, logging and coordinated software updates |
 | [Workloads and execution](https://viona-project.github.io/VIONA-Platform/execution.html) | Docker, Kata Containers, Firecracker, and placement |
 | [Roadmap](https://viona-project.github.io/VIONA-Platform/roadmap.html) | Design, prototype, and pilot milestones |
 | [Contributing](https://viona-project.github.io/VIONA-Platform/contributing.html) | Share use cases, review the design, and build the documentation locally |
